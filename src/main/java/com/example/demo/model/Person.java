@@ -2,6 +2,8 @@ package com.example.demo.model;
 
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Person {
     UUID id;
     String email;
@@ -31,7 +33,7 @@ public class Person {
         this.password = password;
     }
 
-    public Person(UUID id, String email, String password) {
+    public Person(@JsonProperty("id") UUID id, @JsonProperty("email") String email ,@JsonProperty("password") String password) {
         this.id = id;
         this.email = email;
         this.password = password;
